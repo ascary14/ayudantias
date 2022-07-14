@@ -1,0 +1,46 @@
+#include <stdio.h>
+
+int	main() /* Rellenamos una matriz */
+	{
+		int contador,y,x,i,j,k,numeros[3][3];
+		int bandera=1;
+		
+		/* rellenamos la matriz */
+		for (j=0;j<3;j++){
+			for (k=0;k<3;k++){
+				printf("Damen un numero\n");
+				scanf("%d",&y);
+			    contador=0;
+				for (x=0;x<3;x++){
+		        	for (i=0;i<3;i++){
+				        if(y==numeros[x][i]){
+				 
+			        	 bandera=0;
+				        }else{
+				        contador++;
+				   
+				        }
+				 
+			        }	
+		        }
+		if(contador==9){
+		    numeros[j][k]=y;
+		}
+			if (contador<9){
+		     printf("Tu numero se repitio dame otro\n");
+		     bandera=1;
+		     k--;
+			}
+			}
+		}
+		x=0;
+		i=0;
+	
+		/* visualizamos la matriz */
+		for (x=0;x<3;x++){
+		    	printf("\n");
+			for (i=0;i<3;i++){
+				printf("%d",numeros[x][i]);
+			}
+		}
+	}
